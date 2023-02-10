@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,8 +7,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="stylesheet.css">
-    <title>Document</title>
+    <title>Hähnchenschenkel mit Kartoffeln</title>
+
+    <style>
+        body{
+        font-family: "Arial";
+            color: black;
+        }
+        p{
+            font-size: 13pt;
+            color:rgb(74, 74, 74);
+        }
+
+        ul li {
+            list-style-type: square;
+            margin-left: 15px;
+            line-height: 1.8em;
+            font-size: 13pt;
+        }
+
+        .blur {
+            backdrop-filter: blur(80px);
+        }
+
+        body {
+            background-image: url("hähnchen.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        img {
+            text-align: center;
+            width: 400px;
+            height: 300px;
+        }
+
+        .small{
+            font-size: 10pt;
+        }
+        .transparent{
+            background: transparent;
+        }
+
+
+    </style>
 </head>
+
 <body>
 <!--Navigation bar-->
 <div id="nav-placeholder">
@@ -16,11 +61,104 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-    $(function(){
+    $(function () {
         $("#nav-placeholder").load("nav.html");
     });
 </script>
 <!--end of Navigation bar-->
+<section class="section">
+    <div class="container">
+
+        <div class="container">
+            <h1 class="has-text-danger-dark is-size-1 has-text-centered blur has-text-weight-bold">Hähnchenschenkel mit
+                Kartoffeln und Gemüse</h1>
+        </div>
+        <div class="box has-text-centered has-background-danger-light is-bordered">
+            <p> Dieses leckere Rezept ist mein absoluter Liebling. Es ist super simpel in der Zubereitung und
+                da alles zusammen in eine Auflaufform kommt, hält sich die Chaos-Beseitigung in Grenzen. <br>
+                <span class="has-text-weight-bold is-italic">Zubereitungszeit: ca. 1 h </span>
+                <br><br>
+                <span class="has-text-weight-bold is-italic">TIPP!</span> <br> <span class="is-italic">Kalkuliert für 2 Tage, am zweiten Tag
+                schmeckt das Gemüse noch besser!</span> <br><br>
+
+                Nach der Vorbereitung braucht ihr also nichts anderes tun, als warten und zwischendurch in den Ofen
+                schauen!
+                Der Bratensaft vom Hähnchen verteilt sich herrlich über dem Gemüse, das sorgt für eine besondere
+                Aromatik!
+                Wie gesagt mein absoluter Favorit!
+                <span class="has-text-weight-bold is-italic">Unbedingt ausprobieren!</span>
+                <br>
+            </p>
+        </div>
+
+
+        <div class="columns">
+            <div class="column is-one-fifth box has-text-centered has-background-danger-light is-bordered">
+                <h2 class="has-text-danger-dark is-size-3 is-underlined">Zutaten</h2>
+
+                <div class="container">
+                    <p>
+                    <ul>
+                        <li>p.P. 2 Hähnchenschenkel mit Rückenstück</li>
+                        <li>ca. 8 -10 größere Kartoffeln (vorwiegend festkochend)</li>
+                        <li>1-2 Paprika (je nach Größe)</li>
+                        <li>1 Zwiebel</li>
+                        <li>Knoblauchzehen nach belieben</li>
+                        <li>Rosmarin</li>
+                        <li>Salz</li>
+                        <li>Pfeffer</li>
+                        <li>Paprikapulver</li>
+                        <li>Öl</li>
+                        <br>
+                        <li>weiteres Gemüse optional: bspw. Möhren, Zucchini, Aubergine, Brokkoli</li>
+                    </ul>
+                    <br><br><br><br><br><br>
+                    <p class="small">*Die Garzeit hängt von der Größe eurer Hähnchenschenkel ab, daher schaut gerne zwischendurch
+                        in den Ofen
+                        und rührt zwischendurch das Gemüse um.
+                    </p>
+                    </p>
+                </div>
+            </div>
+            <div class="column auto level-right box has-text-centered is-bordered transparent blur">
+                <h2 class="has-text-danger-dark is-size-3  is-underlined"> Zubereitung</h2>
+
+                <div class="container has-text-black">
+                    <p>
+                    <ul>
+                        <li>Auflaufform vorbereiten (am besten eine mit extra Rost) und Ofen auf 200 Grad Umluft
+                            vorheizen
+                        </li>
+                        <li>Kartoffeln schälen und in große Würfel schneiden</li>
+                        <li>Paprika entkernen und in große Stücke schneiden</li>
+                        <li>Zwiebel halbieren und achteln</li>
+                        <li>Knoblauchzehen schälen und halbieren</li>
+                        <li>optionales Gemüse: in etwa ähnlich große Stücke schneiden wie Kartoffeln und Paprika</li>
+                        <li>Gemüse zusammen in die Auflaufform geben, mit Pfeffer und Salz würzen und den Rosmarin
+                            dazugeben
+                        </li>
+                        <li>etwas Öl über das Gemüse geben und alles gut vermischen</li>
+                        <br>
+                        <li>für die Marinade: Salz, Pfeffer, Paprikapulver in etwas Öl zusammenrühren (alternativ deine
+                            Lieblingsgewürzmischung)
+                        </li>
+                        <li>Hähnchenschenkel waschen, trocken tupfen und mit Marinade bestreichen</li>
+                        <li>Hähnchenschenkel auf den Rost legen und über dem Gemüse in der Auflaufform platzieren</li>
+                        <li>Das ganze in den Ofen schieben und bei <span class="has-text-weight-bold">200 Grad ca. 45
+                        Minuten*</span> braten lassen
+                        </li>
+                    </ul>
+                    <p class="is-italic has-text-weight-bold">Jetzt sollte das ganze ungefähr so aussehen: <br>
+                        <img src="hähnchenroh.png" alt="Hähnchen ungegart"></p>
+
+                    </p>
+                </div>
+            </div>
+            <br>
+        </div>
+
+    </div>
+</section>
 
 </body>
 </html>
