@@ -12,6 +12,82 @@
         body{
             background-color: papayawhip;
         }
+
+        .foreground {
+            backdrop-filter: blur(14px);
+        }
+
+        .description{
+            font-size: 18px;
+        }
+
+        .quantity{
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .recipetitle{
+            font-family: Montserrat,sans-serif;
+        }
+
+        ul .quantity{
+            font-family: Montserrat,sans-serif;
+            width: 55px;
+            text-align: right;
+            color: #000;
+            letter-spacing: 1.5px;
+            float: left;
+        }
+
+        ul .description{
+            font-family: Montserrat,sans-serif;
+            color: #000;
+            padding-left: 10px;
+        }
+
+        ol li::marker{
+            font-size: 25px;
+        }
+/*
+        ul.recipeSteps li.recipeStep .stepIndex{
+            color: #000;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            text-align: center;
+            margin: 5px 10px;
+        }*/
+
+
+        input {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            background: transparent;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.125;
+
+        }
+        input[type='number']{
+            width: 45px;
+        }
+        .beef {
+            background-image: url("https://food-images.files.bbci.co.uk/food/recipes/boeuf_bourguignon_25475_16x9.jpg");
+        }
+
+
+
+        .is-slightly-transparent{
+
+            background: rgba(244,244,255,0.8);
+        }
+
+
+
+
     </style>
 </head>
 <body>
@@ -25,6 +101,17 @@
         $("#nav-placeholder").load("nav.html");
     });
 </script>
+<script>
+    $(function() {
+        $("#people").on("input", function() {
+            const people = +$(this).val();
+            const base = +$(this).data("ppl");
+            $(".quantity").text(function() {
+                return people ? ($(this).data("qty") * ( people / base)) : 0
+            });
+        });
+    });
+</script>
 <!--end of Navigation bar-->
 
 <nav class="breadcrumb" aria-label="breadcrumbs">
@@ -34,57 +121,254 @@
         <li class="is-active"><a href="#" aria-current="page">Beef Bourguignon </a></li>
     </ul>
 </nav>
-<div class="columns">
+<div class="columns is-center">
     <!-- spacer left -->
     <div class="column is-1"></div>
 
     <div class="column">
+
         <section class="section">
-            <div class="card">
-                <div class="card-content">
-                    <div class="columns">
-                        <div class="column">
-                            <section class="section is-small">
-                                <h1 class="title">Beef Bourguignon</h1>
-                            </section>
-                            <div class="content">There are some recipes that are worth the wait and Julia Child's Beef Bourguignon is one of them. You can’t and shouldn't rush savory, seared beef, and fork-tender vegetables, especially when they simmer a rich full-flavored sauce. When a recipe is this good, there's no need to rush, are we right? Don’t be surprised when this time-honored dish wows your whole crew. There's a reason this beef bourguignon is a culinary cult-classic, and they’ll see and taste why. </div>
-                            <div class="level box ">
-                                <div class="level-item has-text-centered">
-                                    <div>
-                                        <p class="heading">Prep Zeit</p>
-                                        <p class="title">45 Min</p>
-                                    </div>
-                                </div>
-                                <div class="level-item has-text-centered">
-                                    <div>
-                                        <p class="heading">Dauer</p>
-                                        <p class="title">6 h</p>
-                                    </div>
-                                </div>
-                                <div class="level-item has-text-centered">
-                                    <div>
-                                        <p class="heading">Portionen</p>
-                                        <p class="title">4</p>
-                                    </div>
-                                </div>
+
+            <div class="columns box beef ">
+                <div class="column  is-slightly-transparent foreground">
+                    <section class="section ">
+                        <h1 class="title">Beef Bourguignon</h1>
+                        <figure class="image is-hidden-tablet">
+                            <img src="https://images-gmi-pmc.edge-generalmills.com/42fb4d81-8d92-40e2-9f0a-524edce5ca74.jpg">
+                        </figure>
+                    </section>
+                    <div class="content">There are some recipes that are worth the wait and Julia Child's Beef Bourguignon is one of them. You can’t and shouldn't rush savory, seared beef, and fork-tender vegetables, especially when they simmer a rich full-flavored sauce. When a recipe is this good, there's no need to rush, are we right? Don’t be surprised when this time-honored dish wows your whole crew. There's a reason this beef bourguignon is a culinary cult-classic, and they’ll see and taste why. </div>
+                    <div class="level box ">
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <p class="heading">Prep Time</p>
+                                <p class="title">45 Min</p>
                             </div>
                         </div>
-                        <div class="column is-narrow">
-                            <div class="card-image">
-                                <figure class="image is-256x256">
-                                    <img src="https://images-gmi-pmc.edge-generalmills.com/42fb4d81-8d92-40e2-9f0a-524edce5ca74.jpg" alt="Beef Bourguignon Bild"/>
-                                </figure>
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <p class="heading">Cooking Time</p>
+                                <p class="title">6 h</p>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-right">
+                            <div>
+                                <p class="heading">Portions</p>
+
+                                <input size="3" type="number" value="4" data-ppl="4" id="people">
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="column">
+                </div>
             </div>
+
+
         </section>
     </div>
     <!-- spacer right -->
     <div class="column is-1"></div>
 </div>
 
+<div class="columns">
+    <div class="column is-one-fifth has-background-primary">test</div>
+    <div class="column ">
+        <div class="columns">
+            <div class="column">
+                <div class="recipelist box">
+                    <div class="title is-one-fifth recipetitle">Ingredients</div>
+                    <ul>
+                        <li>
+                            <span class="quantity" data-qty="6">6</span>
+                            <span class="description">slices bacon, cut into lardons</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="3.5">3.5</span>
+                            <span class="description">tablespoons extra-virgin olive oil</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="3">3</span>
+                            <span class="description">pounds stewing beef, cut into 2-inch chunks</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">large carrot, sliced</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">large white onion, sliced</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">pinch coarse salt and freshly ground pepper</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="2">2</span>
+                            <span class="description">tablespoons Gold Medal™ all-purpose flour</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="3">3</span>
+                            <span class="description">cups red wine, like a chianti</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="2.5">2.5</span>
+                            <span class="description">to 3 1/2 cups beef stock</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">tablespoon tomato paste</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="2">2</span>
+                            <span class="description">cloves smashed garlic</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="0.5">0.5</span>
+                            <span class="description">teaspoon thyme</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">crumbled bay leaf</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="20">20</span>
+                            <span class="description"> small pearl onions</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="3.5">3.5</span>
+                            <span class="description">tablespoons butter</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">herb bouquet (4 sprigs parsley, 2 sprigs thyme, 1 bay leaf)</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">pound fresh white mushrooms, quartered</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="steps box">
+                    <div class=" level">
+                        <div class="title is-one-fifth level-left">Steps</div>
+                        <div class="level-right">
+                            <button class="button has-background-white-bis hidebutton" onclick="myFunction()">Hide Images</button>
+                            <script>
+                                function myFunction() {
+                                    var x = document.getElementsByClassName('imageToHide');
+                                    Array.from(x).forEach((x) => {
+                                        if (x.style.display === "none") {
+                                            x.style.display = "block";
+                                            $(function () {
+                                                $(".hidebutton").text(function () {
+                                                    return "Hide Images"
+                                                })
+                                            })
+                                        } else {
+                                            x.style.display = "none";
+                                            $(function () {
+                                                $(".hidebutton").text(function () {
+                                                    return "Show Images"
+                                                })
+                                            })
+                                        }
+                                    })
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <ol class="recipeSteps">
+                            <li class="recipeStep">
 
+                                <div class="box">
+                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                                    <figure class="image">
+                                        <div class="imageToHide">
+                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                        </div></figure>
+                                </div>
+                            </li>
+                            <li>
+                                <div class=" box">
+                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                                    <figure class="image">
+                                        <div class="imageToHide">
+                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                        </div></figure>
+                                </div>
+                            </li>
+                            <li>
+                                <div class=" box">
+                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                                    <figure class="image">
+                                        <div class="imageToHide">
+                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                        </div></figure>
+                                </div>
+                            </li>
+                            <li>
+                                <div class=" box">
+                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                                    <figure class="image">
+                                        <div class="imageToHide">
+                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                        </div></figure>
+                                </div>
+                            </li>
+                            <li>
+                                <div class=" box">
+                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                                    <figure class="image">
+                                        <div class="imageToHide">
+                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                        </div></figure>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                            </li>
+                            <li>
+                                <div class="content">Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                            </li>
+                            <li>
+                                <div class=" box">
+                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                                    <figure class="image">
+                                        <div class="imageToHide">
+                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                        </div></figure>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                            </li>
+                            <li>
+                                <div class=" box">
+                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                                    <figure class="image">
+                                        <div class="imageToHide">
+                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                        </div></figure>
+                                </div>
+                            </li>
+                            <li>
+                                <div class=" box">
+                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
+                                    <figure class="image">
+                                        <div class="imageToHide">
+                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                        </div></figure>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column is-one-fifth has-background-grey-light"></div>
+</div>
 </body>
 </html>
