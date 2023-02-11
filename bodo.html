@@ -181,7 +181,26 @@
 <!-- "body" -->
 <div class="columns">
     <!-- left column -->
-    <div class="column  has-background-primary">test</div>
+    <div class="column  is-hidden-mobile">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image">
+                    <img src="http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcS5qwJUPhnSv4hhdLZaGY77JMN6s-K2-t-yMc_dtMAO4xzh49u4JQ7GuveXCvMKp_y9DFduvS-u-g097R0"
+                         alt="Image of the Cook Julia Child">
+                </figure>
+            </div>
+
+            <div class="card-content">
+                <div class="content">“Julia has slowly but surely altered our way of thinking about food. She has taken
+                    the
+                    fear out of the term ‘haute cuisine.’ She has increased gastronomic awareness a thousandfold by
+                    stressing the importance of good foundation and technique, and she has elevated our consciousness to
+                    the
+                    refined pleasures of dining." —Thomas Keller, The French Laundry
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- middle column -->
     <div class="column is-6">
         <div class="columns">
@@ -263,7 +282,7 @@
                     <div class=" level">
                         <div class="title is-one-fifth level-left">Steps</div>
                         <div class="level-right">
-                            <button class="button has-background-white-bis hidebutton" onclick="hideImages()">Hide
+                            <button class="button  hidebutton" onclick="hideImages()">Hide
                                 Images
                             </button>
                             <script>
@@ -398,7 +417,8 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="box" onclick=hideThis(document.getElementById('done7'),document.getElementById('step7'))>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done7'),document.getElementById('step7'))>
                                     <div class="content" id="done7"> Done.</div>
                                     <div class="content" id="step7">To the pot, add the wine and stock. The liquid
                                         should barely
@@ -481,7 +501,34 @@
         </div>
     </div>
     <!-- right column -->
-    <div class="column  has-background-grey-light"></div>
-</div>
+    <div class="column  ">
+    <div class="box has-text-centered"> Weitere Rezeptideen!</div>
+        <div class="tile is-ancestor">
+            <div class="tile">
+                <div class="card box has-background-white-bis">
+                    <div class="card-image">
+                        <figure class="image">
+                            <a href="alina.html"><img src="hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
+                        </figure>
+                    </div>
+                    <div class="card-content  card-header-title">
+                        Hähnchenschenkel mit Kartoffeln und Gemüse
+                    </div>
+                </div>
+            </div>
+            <div class="tile ">
+                <div class="card box is-one-quarter-mobile has-background-white-bis">
+                    <div class="card-image">
+                        <figure class="image">
+                            <a href="alina.html"><img src="hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        TETSTASTASTAST
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
