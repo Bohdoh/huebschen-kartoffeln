@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="stylesheet_bodo.css">
     <title>Document</title>
     <style>
-        body{
+        body {
             background-color: papayawhip;
         }
 
@@ -17,21 +17,21 @@
             backdrop-filter: blur(14px);
         }
 
-        .description{
+        .description {
             font-size: 18px;
         }
 
-        .quantity{
+        .quantity {
             font-weight: bold;
             font-size: 18px;
         }
 
-        .recipetitle{
-            font-family: Montserrat,sans-serif;
+        .recipetitle {
+            font-family: Montserrat, sans-serif;
         }
 
-        ul .quantity{
-            font-family: Montserrat,sans-serif;
+        ul .quantity {
+            font-family: Montserrat, sans-serif;
             width: 55px;
             text-align: right;
             color: #000;
@@ -39,26 +39,27 @@
             float: left;
         }
 
-        ul .description{
-            font-family: Montserrat,sans-serif;
+        ul .description {
+            font-family: Montserrat, sans-serif;
             color: #000;
             padding-left: 10px;
         }
 
-        ol li::marker{
+        ol li::marker {
             font-size: 25px;
         }
-/*
-        ul.recipeSteps li.recipeStep .stepIndex{
-            color: #000;
-            font-weight: 700;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #000;
-            border-radius: 50%;
-            text-align: center;
-            margin: 5px 10px;
-        }*/
+
+        /*
+                ul.recipeSteps li.recipeStep .stepIndex{
+                    color: #000;
+                    font-weight: 700;
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid #000;
+                    border-radius: 50%;
+                    text-align: center;
+                    margin: 5px 10px;
+                }*/
 
 
         input {
@@ -71,23 +72,25 @@
             line-height: 1.125;
 
         }
-        input[type='number']{
+
+        input[type='number'] {
             width: 45px;
         }
+
         .beef {
             background-image: url("https://food-images.files.bbci.co.uk/food/recipes/boeuf_bourguignon_25475_16x9.jpg");
             background-size: cover;
         }
 
 
+        .is-slightly-transparent {
 
-        .is-slightly-transparent{
-
-            background: rgba(244,244,255,0.8);
+            background: rgba(244, 244, 255, 0.8);
         }
 
-
-
+        #done1, #done2, #done3, #done4, #done5, #done6, #done7, #done8, #done9, #done10, #done11 {
+            display: none;
+        }
 
     </style>
 </head>
@@ -98,17 +101,17 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-    $(function(){
+    $(function () {
         $("#nav-placeholder").load("nav.html");
     });
 </script>
 <script>
-    $(function() {
-        $("#people").on("input", function() {
+    $(function () {
+        $("#people").on("input", function () {
             const people = +$(this).val();
             const base = +$(this).data("ppl");
-            $(".quantity").text(function() {
-                return people ? ($(this).data("qty") * ( people / base)) : 0
+            $(".quantity").text(function () {
+                return people ? ($(this).data("qty") * (people / base)) : 0
             });
         });
     });
@@ -125,11 +128,8 @@
 <div class="columns is-center">
     <!-- spacer left -->
     <div class="column is-1"></div>
-
     <div class="column">
-
         <section class="section">
-
             <div class="columns box beef ">
                 <div class="column  is-slightly-transparent foreground">
                     <section class="section ">
@@ -138,7 +138,13 @@
                             <img src="https://images-gmi-pmc.edge-generalmills.com/42fb4d81-8d92-40e2-9f0a-524edce5ca74.jpg">
                         </figure>
                     </section>
-                    <div class="content">There are some recipes that are worth the wait and Julia Child's Beef Bourguignon is one of them. You can’t and shouldn't rush savory, seared beef, and fork-tender vegetables, especially when they simmer a rich full-flavored sauce. When a recipe is this good, there's no need to rush, are we right? Don’t be surprised when this time-honored dish wows your whole crew. There's a reason this beef bourguignon is a culinary cult-classic, and they’ll see and taste why. </div>
+                    <div class="content">There are some recipes that are worth the wait and Julia Child's Beef
+                        Bourguignon is one of them. You can’t and shouldn't rush savory, seared beef, and fork-tender
+                        vegetables, especially when they simmer a rich full-flavored sauce. When a recipe is this good,
+                        there's no need to rush, are we right? Don’t be surprised when this time-honored dish wows your
+                        whole crew. There's a reason this beef bourguignon is a culinary cult-classic, and they’ll see
+                        and taste why.
+                    </div>
                     <div class="level box ">
                         <div class="level-item has-text-centered">
                             <div>
@@ -172,9 +178,12 @@
     <div class="column is-1"></div>
 </div>
 
+<!-- "body" -->
 <div class="columns">
-    <div class="column is-one-fifth has-background-primary">test</div>
-    <div class="column ">
+    <!-- left column -->
+    <div class="column  has-background-primary">test</div>
+    <!-- middle column -->
+    <div class="column is-6">
         <div class="columns">
             <div class="column">
                 <div class="recipelist box">
@@ -254,9 +263,11 @@
                     <div class=" level">
                         <div class="title is-one-fifth level-left">Steps</div>
                         <div class="level-right">
-                            <button class="button has-background-white-bis hidebutton" onclick="myFunction()">Hide Images</button>
+                            <button class="button has-background-white-bis hidebutton" onclick="hideImages()">Hide
+                                Images
+                            </button>
                             <script>
-                                function myFunction() {
+                                function hideImages() {
                                     var x = document.getElementsByClassName('imageToHide');
                                     Array.from(x).forEach((x) => {
                                         if (x.style.display === "none") {
@@ -282,85 +293,185 @@
                     <div class="content">
                         <ol class="recipeSteps">
                             <li class="recipeStep">
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done1'),document.getElementById('step1'))>
+                                    <script>
+                                        function hideThis(done, description) {
+                                            if (done.style.display === "none") {
+                                                done.style.display = "block"
+                                                description.style.display = "none";
+                                            } else {
+                                                done.style.display = "none"
+                                                description.style.display = "block";
+                                            }
+                                        }
+                                    </script>
+                                    <div class="content" id="done1"> Done.</div>
+                                    <div class="content" id="step1"> Simmer bacon lardons in 4 cups water for 10 minutes
+                                        (Lardon is
+                                        the French culinary term referring to thin strips of bacon, cut approximately
+                                        1/4-inch thick). Drain and pat dry.
 
-                                <div class="box">
-                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                                    <figure class="image">
-                                        <div class="imageToHide">
-                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
-                                        </div></figure>
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class=" box">
-                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                                    <figure class="image">
-                                        <div class="imageToHide">
-                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
-                                        </div></figure>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done2'),document.getElementById('step2'))>
+                                    <div class="content" id="done2"> Done.</div>
+                                    <div class="content" id="step2"> Preheat oven to 450°F. In a large Dutch oven, sauté
+                                        the bacon
+                                        in 1 tablespoon of oil for about 3 minutes, until it starts to lightly brown.
+                                        Remove with a slotted spoon and set aside.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/8fbe42d2-d1bb-4f47-a796-8103f55456c0.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class=" box">
-                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                                    <figure class="image">
-                                        <div class="imageToHide">
-                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
-                                        </div></figure>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done3'),document.getElementById('step3'))>
+                                    <div class="content" id="done3"> Done.</div>
+                                    <div class="content" id="step3"> Dry the beef with a few paper towels for better
+                                        browning. In
+                                        batches, sear the beef on all sides in the Dutch oven. Set aside with the bacon.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/d679899c-03f3-421c-bc7a-d92f82ad4948.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class=" box">
-                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                                    <figure class="image">
-                                        <div class="imageToHide">
-                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
-                                        </div></figure>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done4'),document.getElementById('step4'))>
+                                    <div class="content" id="done4"> Done.</div>
+                                    <div class="content" id="step4"> Back in the pot, add the sliced carrots and onions;
+                                        sauté in
+                                        fat until browned, about 3 minutes. If there's any excess fat, drain it now.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/6b859d0b-a00a-4a16-8403-83f01a3cf515.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class=" box">
-                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                                    <figure class="image">
-                                        <div class="imageToHide">
-                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
-                                        </div></figure>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done5'),document.getElementById('step5'))>
+                                    <div class="content" id="done5"> Done.</div>
+                                    <div class="content" id="step5"> Add the bacon and beef back to the pot. Season with
+                                        1/2
+                                        teaspoon coarse salt and 1/4 teaspoon ground pepper. Toss. Sprinkle with flour
+                                        and toss once more. Place in the center of the oven for 4 minutes.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/2547d606-80e3-4944-9926-5b227723b765.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="content">Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                            </li>
-                            <li>
-                                <div class="content">Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                            </li>
-                            <li>
-                                <div class=" box">
-                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                                    <figure class="image">
-                                        <div class="imageToHide">
-                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
-                                        </div></figure>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done6'),document.getElementById('step6'))>
+                                    <div class="content" id="done6"> Done.</div>
+                                    <div class="content" id="step6">Remove pot from oven; toss beef and place back in
+                                        the oven for
+                                        4 more minutes. Remove the pot from the oven and reduce the heat to
+                                        325°F./4-inch thick). Drain and pat dry.
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="content">Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                            </li>
-                            <li>
-                                <div class=" box">
-                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                                    <figure class="image">
-                                        <div class="imageToHide">
-                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
-                                        </div></figure>
+                                <div class="box" onclick=hideThis(document.getElementById('done7'),document.getElementById('step7'))>
+                                    <div class="content" id="done7"> Done.</div>
+                                    <div class="content" id="step7">To the pot, add the wine and stock. The liquid
+                                        should barely
+                                        cover the meat and vegetables. Add the tomato paste, garlic and thyme. Bring to
+                                        a light simmer on the stove, then cover and simmer in the lower part of the oven
+                                        for 3 to 4 hours, or until the meat is easily pierced.
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class=" box">
-                                    <div class="content"> Simmer bacon lardons in 4 cups water for 10 minutes (Lardon is the French culinary term referring to thin strips of bacon, cut approximately 1/4-inch thick). Drain and pat dry.</div>
-                                    <figure class="image">
-                                        <div class="imageToHide">
-                                            <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
-                                        </div></figure>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done8'),document.getElementById('step8'))>
+                                    <div class="content" id="done8"> Done.</div>
+                                    <div class="content" id="step8"> In the last hour of cooking, bring 1 1/2
+                                        tablespoons butter
+                                        and 2 teaspoons oil to a medium heat in a sauté pan. Add the pearl onions and
+                                        toss around in the fat until they've browned, 10 minutes. Then stir in 1/2 cup
+                                        beef stock, a small pinch of salt and pepper and the herb bouquet. Reduce the
+                                        heat to low and simmer the onions for about 40 minutes, until the liquid has
+                                        evaporated, and the onions are tender.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/d7a932c4-b647-46b5-9d4c-deaa743277ef.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done9'),document.getElementById('step9'))>
+                                    <div class="content" id="done9"> Done.</div>
+                                    <div class="content" id="step9">Remove the onions and set aside. Discard the herb
+                                        bouquet and
+                                        wipe out the skillet. Add the remaining butter and oil and bring to a medium
+                                        heat.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done10'),document.getElementById('step10'))>
+                                    <div class="content" id="done10"> Done.</div>
+                                    <div class="content" id="step10">Add the mushrooms and cook for about 5 minutes,
+                                        shaking the pan
+                                        to coat with the butter.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/6e19a8df-3f5c-4af7-b95a-f0f1c17c9f5c.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done11'),document.getElementById('step11'))>
+                                    <div class="content" id="done11"> Done.</div>
+                                    <div class="content" id="step11"> Place a colander over a large pot. Drain the beef
+                                        stew through
+                                        the colander and into the pot. Place the pot with the sauce over a medium heat
+                                        and simmer for about 5 minutes, skimming any fat on top. Pour the beef and
+                                        vegetables back into the Dutch oven. Add the pearl onions and mushrooms to the
+                                        pot. Pour the sauce over the beef mix and simmer an additional 3 to 5 minutes.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/12cf52e4-b64b-4821-8ede-e9f84676f8e9.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
                                 </div>
                             </li>
                         </ol>
@@ -369,7 +480,8 @@
             </div>
         </div>
     </div>
-    <div class="column is-one-fifth has-background-grey-light"></div>
+    <!-- right column -->
+    <div class="column  has-background-grey-light"></div>
 </div>
 </body>
 </html>
