@@ -22,9 +22,13 @@ body {
     justify-content: center;
     position: relative;
     transform-style: preserve-3d;
+}
+.section1 {
 
 
 }
+
+
 .section2 {
     background: rgb(68,35,19);
     height: 100vh;
@@ -91,10 +95,16 @@ body {
 .responsive {
     width: auto;
     height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
 }
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5%;
 }
+
 
