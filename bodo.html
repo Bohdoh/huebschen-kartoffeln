@@ -49,19 +49,6 @@
             font-size: 25px;
         }
 
-        /*
-                ul.recipeSteps li.recipeStep .stepIndex{
-                    color: #000;
-                    font-weight: 700;
-                    width: 20px;
-                    height: 20px;
-                    border: 2px solid #000;
-                    border-radius: 50%;
-                    text-align: center;
-                    margin: 5px 10px;
-                }*/
-
-
         input {
             border: 0;
             padding: 0;
@@ -140,9 +127,6 @@
                     return people ? ($(this).data("qty") * (people / base)) : 0
                 });
             });
-        });
-        $(function () {
-            $("#nav-placeholder").load("nav.html");
         });
     </script>
 </head>
@@ -294,7 +278,7 @@
                         </li>
                         <li>
                             <span class="quantity" data-qty="2.5">2.5</span>
-                            <span class="description">to 3 1/2 cups beef stock</span>
+                            <span class="description">cups beef stock</span>
                         </li>
                         <li>
                             <span class="quantity" data-qty="1">1</span>
@@ -529,7 +513,7 @@
                 <figure class="image">
                     <a href="alina.html"><img src="images/hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
                 </figure>
-                <div class="box">
+                <div class="box title is-6">
                     Hähnchenschenkel mit Kartoffeln und Gemüse
                 </div>
             </div>
@@ -541,7 +525,7 @@
                                     src="https://assets.epicurious.com/photos/63c17f620a2588545b65efc9/3:2/w_4020,h_2680,c_limit/Atsuko-p-85_VOG_final.jpg"
                                     alt="Link zu Minhs Gericht"></a>
                         </figure>
-                        <div class="box">
+                        <div class="box title is-6">
                             Shoyu Ramen
                         </div>
                     </div>
@@ -549,7 +533,7 @@
                         <figure class="image">
                             <a href="baco.html"><img src="images/St-Sebastian1.jpg" alt="Link zu Bacos Gericht"></a>
                         </figure>
-                        <div class="box">
+                        <div class="box title is-6">
                             St. Sebastian Cheesecake
                         </div>
                     </div>
