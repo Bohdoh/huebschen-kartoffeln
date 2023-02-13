@@ -98,6 +98,7 @@
 
 
     </style>
+    <script src="https://kit.fontawesome.com/876162a540.js" crossorigin="anonymous"></script>
     <script>
         function hideThis(done, description) {
             if (done.style.display === "none") {
@@ -139,6 +140,9 @@
                     return people ? ($(this).data("qty") * (people / base)) : 0
                 });
             });
+        });
+        $(function () {
+            $("#nav-placeholder").load("nav.html");
         });
     </script>
 </head>
@@ -520,10 +524,10 @@
     <!-- right column -->
     <div class="column">
         <div class="box has-text-centered"> Weitere Rezeptideen!</div>
-        <div class="columns  is-mobile is-multiline ml-2 mr-2">
+        <div class="columns  is-mobile is-hidden-desktop is-hidden-tablet is-multiline ml-1 mr-1">
             <div class="column is-half">
                 <figure class="image">
-                    <a href="alina.html"><img src="hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
+                    <a href="alina.html"><img src="images/hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
                 </figure>
                 <div class="box">
                     Hähnchenschenkel mit Kartoffeln und Gemüse
@@ -552,8 +556,54 @@
                 </div>
             </div>
         </div>
+        <div class="columns is-hidden-mobile ml-1 mr-1 is-multiline">
+            <div class="column is-half">
+                <figure class="image">
+                    <a href="alina.html"><img src="images/hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
+                </figure>
+                <div class="box title is-6 ">
+                    Hähnchenschenkel mit Kartoffeln und Gemüse
+                </div>
+            </div>
+            <div class="column is-half">
+                <figure class="image">
+                    <a href="minh.html"><img
+                            src="https://assets.epicurious.com/photos/63c17f620a2588545b65efc9/3:2/w_4020,h_2680,c_limit/Atsuko-p-85_VOG_final.jpg"
+                            alt="Link zu Minhs Gericht"></a>
+                </figure>
+                <div class="box title is-6 ">
+                    Shoyu Ramen
+                </div>
+            </div>
+            <div class="column">
+                <figure class="image">
+                    <a href="baco.html"><img src="images/St-Sebastian1.jpg" alt="Link zu Bacos Gericht"></a>
+                </figure>
+                <div class="box title is-6">
+                    St. Sebastian Cheesecake
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-</div>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong> Beef Bourguignon </strong> by Sebastian Hennicke
+        </p>
+        <nav class="tabs is-centered">
+
+                <ul>
+                <li><a><i class="fab fa-apple"></i></a></li>
+                <li><a><i class="fab fa-github"></i></a></li>
+                <li><a><i class="fab fa-facebook"></i></a></li>
+                <li><a><i class="fab fa-instagram"></i></a></li>
+                <li> <a><i class="fab fa-twitter"></i></a></li>
+                </ul>
+
+        </nav>
+    </div>
+</footer>
 </body>
 </html>
