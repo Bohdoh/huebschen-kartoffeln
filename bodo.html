@@ -6,8 +6,93 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="stylesheet_bodo.css">
     <title>Document</title>
+    <style>
+        body {
+            background-color: papayawhip;
+        }
+
+        .foreground {
+            backdrop-filter: blur(14px);
+        }
+
+        .description {
+            font-size: 18px;
+        }
+
+        .quantity {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .recipetitle {
+            font-family: Montserrat, sans-serif;
+        }
+
+        ul .quantity {
+            font-family: Montserrat, sans-serif;
+            width: 55px;
+            text-align: right;
+            color: #000;
+            letter-spacing: 1.5px;
+            float: left;
+        }
+
+        ul .description {
+            font-family: Montserrat, sans-serif;
+            color: #000;
+            padding-left: 10px;
+        }
+
+        ol li::marker {
+            font-size: 25px;
+        }
+
+        /*
+                ul.recipeSteps li.recipeStep .stepIndex{
+                    color: #000;
+                    font-weight: 700;
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid #000;
+                    border-radius: 50%;
+                    text-align: center;
+                    margin: 5px 10px;
+                }*/
+
+
+        input {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            background: transparent;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.125;
+
+        }
+
+        input[type='number'] {
+            width: 45px;
+        }
+
+        .beef {
+            background-image: url("https://food-images.files.bbci.co.uk/food/recipes/boeuf_bourguignon_25475_16x9.jpg");
+            background-size: cover;
+        }
+
+
+        .is-slightly-transparent {
+
+            background: rgba(244, 244, 255, 0.8);
+        }
+
+        #done1, #done2, #done3, #done4, #done5, #done6, #done7, #done8, #done9, #done10, #done11 {
+            display: none;
+        }
+
+    </style>
 </head>
 <body>
 <!--Navigation bar-->
@@ -16,11 +101,434 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-    $(function(){
+    $(function () {
         $("#nav-placeholder").load("nav.html");
+    });
+</script>
+<script>
+    $(function () {
+        $("#people").on("input", function () {
+            const people = +$(this).val();
+            const base = +$(this).data("ppl");
+            $(".quantity").text(function () {
+                return people ? ($(this).data("qty") * (people / base)) : 0
+            });
+        });
     });
 </script>
 <!--end of Navigation bar-->
 
+<nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="index.html">Hauptseite</a></li>
+        <li><a href="#">Rindfleisch</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Beef Bourguignon </a></li>
+    </ul>
+</nav>
+<div class="columns is-center">
+    <!-- spacer left -->
+    <div class="column is-1"></div>
+    <div class="column">
+        <section class="section">
+            <div class="columns box beef ">
+                <div class="column  is-slightly-transparent foreground">
+                    <section class="section ">
+                        <h1 class="title">Beef Bourguignon</h1>
+                        <figure class="image is-hidden-tablet">
+                            <img src="https://images-gmi-pmc.edge-generalmills.com/42fb4d81-8d92-40e2-9f0a-524edce5ca74.jpg">
+                        </figure>
+                    </section>
+                    <div class="content">There are some recipes that are worth the wait and Julia Child's Beef
+                        Bourguignon is one of them. You can’t and shouldn't rush savory, seared beef, and fork-tender
+                        vegetables, especially when they simmer a rich full-flavored sauce. When a recipe is this good,
+                        there's no need to rush, are we right? Don’t be surprised when this time-honored dish wows your
+                        whole crew. There's a reason this beef bourguignon is a culinary cult-classic, and they’ll see
+                        and taste why.
+                    </div>
+                    <div class="level box ">
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <p class="heading">Prep Time</p>
+                                <p class="title">45 Min</p>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-centered">
+                            <div>
+                                <p class="heading">Cooking Time</p>
+                                <p class="title">6 h</p>
+                            </div>
+                        </div>
+                        <div class="level-item has-text-right">
+                            <div>
+                                <p class="heading">Portions</p>
+
+                                <input size="3" type="number" value="4" data-ppl="4" id="people">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+    <!-- spacer right -->
+    <div class="column is-1"></div>
+</div>
+
+<!-- "body" -->
+<div class="columns">
+    <!-- left column -->
+    <div class="column  is-hidden-mobile">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image">
+                    <img src="http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcS5qwJUPhnSv4hhdLZaGY77JMN6s-K2-t-yMc_dtMAO4xzh49u4JQ7GuveXCvMKp_y9DFduvS-u-g097R0"
+                         alt="Image of the Cook Julia Child">
+                </figure>
+            </div>
+
+            <div class="card-content">
+                <div class="content">“Julia has slowly but surely altered our way of thinking about food. She has taken
+                    the
+                    fear out of the term ‘haute cuisine.’ She has increased gastronomic awareness a thousandfold by
+                    stressing the importance of good foundation and technique, and she has elevated our consciousness to
+                    the
+                    refined pleasures of dining." —Thomas Keller, The French Laundry
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- middle column -->
+    <div class="column is-6">
+        <div class="columns">
+            <div class="column">
+                <div class="recipelist box">
+                    <div class="title is-one-fifth recipetitle">Ingredients</div>
+                    <ul>
+                        <li>
+                            <span class="quantity" data-qty="6">6</span>
+                            <span class="description">slices bacon, cut into lardons</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="3.5">3.5</span>
+                            <span class="description">tablespoons extra-virgin olive oil</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="3">3</span>
+                            <span class="description">pounds stewing beef, cut into 2-inch chunks</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">large carrot, sliced</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">large white onion, sliced</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">pinch coarse salt and freshly ground pepper</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="2">2</span>
+                            <span class="description">tablespoons Gold Medal™ all-purpose flour</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="3">3</span>
+                            <span class="description">cups red wine, like a chianti</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="2.5">2.5</span>
+                            <span class="description">to 3 1/2 cups beef stock</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">tablespoon tomato paste</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="2">2</span>
+                            <span class="description">cloves smashed garlic</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="0.5">0.5</span>
+                            <span class="description">teaspoon thyme</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">crumbled bay leaf</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="20">20</span>
+                            <span class="description"> small pearl onions</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="3.5">3.5</span>
+                            <span class="description">tablespoons butter</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">herb bouquet (4 sprigs parsley, 2 sprigs thyme, 1 bay leaf)</span>
+                        </li>
+                        <li>
+                            <span class="quantity" data-qty="1">1</span>
+                            <span class="description">pound fresh white mushrooms, quartered</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="steps box">
+                    <div class=" level">
+                        <div class="title is-one-fifth level-left">Steps</div>
+                        <div class="level-right">
+                            <button class="button  hidebutton" onclick="hideImages()">Hide
+                                Images
+                            </button>
+                            <script>
+                                function hideImages() {
+                                    var x = document.getElementsByClassName('imageToHide');
+                                    Array.from(x).forEach((x) => {
+                                        if (x.style.display === "none") {
+                                            x.style.display = "block";
+                                            $(function () {
+                                                $(".hidebutton").text(function () {
+                                                    return "Hide Images"
+                                                })
+                                            })
+                                        } else {
+                                            x.style.display = "none";
+                                            $(function () {
+                                                $(".hidebutton").text(function () {
+                                                    return "Show Images"
+                                                })
+                                            })
+                                        }
+                                    })
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <ol class="recipeSteps">
+                            <li class="recipeStep">
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done1'),document.getElementById('step1'))>
+                                    <script>
+                                        function hideThis(done, description) {
+                                            if (done.style.display === "none") {
+                                                done.style.display = "block"
+                                                description.style.display = "none";
+                                            } else {
+                                                done.style.display = "none"
+                                                description.style.display = "block";
+                                            }
+                                        }
+                                    </script>
+                                    <div class="content" id="done1"> Done.</div>
+                                    <div class="content" id="step1"> Simmer bacon lardons in 4 cups water for 10 minutes
+                                        (Lardon is
+                                        the French culinary term referring to thin strips of bacon, cut approximately
+                                        1/4-inch thick). Drain and pat dry.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done2'),document.getElementById('step2'))>
+                                    <div class="content" id="done2"> Done.</div>
+                                    <div class="content" id="step2"> Preheat oven to 450°F. In a large Dutch oven, sauté
+                                        the bacon
+                                        in 1 tablespoon of oil for about 3 minutes, until it starts to lightly brown.
+                                        Remove with a slotted spoon and set aside.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/8fbe42d2-d1bb-4f47-a796-8103f55456c0.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done3'),document.getElementById('step3'))>
+                                    <div class="content" id="done3"> Done.</div>
+                                    <div class="content" id="step3"> Dry the beef with a few paper towels for better
+                                        browning. In
+                                        batches, sear the beef on all sides in the Dutch oven. Set aside with the bacon.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/d679899c-03f3-421c-bc7a-d92f82ad4948.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done4'),document.getElementById('step4'))>
+                                    <div class="content" id="done4"> Done.</div>
+                                    <div class="content" id="step4"> Back in the pot, add the sliced carrots and onions;
+                                        sauté in
+                                        fat until browned, about 3 minutes. If there's any excess fat, drain it now.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/6b859d0b-a00a-4a16-8403-83f01a3cf515.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done5'),document.getElementById('step5'))>
+                                    <div class="content" id="done5"> Done.</div>
+                                    <div class="content" id="step5"> Add the bacon and beef back to the pot. Season with
+                                        1/2
+                                        teaspoon coarse salt and 1/4 teaspoon ground pepper. Toss. Sprinkle with flour
+                                        and toss once more. Place in the center of the oven for 4 minutes.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/2547d606-80e3-4944-9926-5b227723b765.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done6'),document.getElementById('step6'))>
+                                    <div class="content" id="done6"> Done.</div>
+                                    <div class="content" id="step6">Remove pot from oven; toss beef and place back in
+                                        the oven for
+                                        4 more minutes. Remove the pot from the oven and reduce the heat to
+                                        325°F./4-inch thick). Drain and pat dry.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done7'),document.getElementById('step7'))>
+                                    <div class="content" id="done7"> Done.</div>
+                                    <div class="content" id="step7">To the pot, add the wine and stock. The liquid
+                                        should barely
+                                        cover the meat and vegetables. Add the tomato paste, garlic and thyme. Bring to
+                                        a light simmer on the stove, then cover and simmer in the lower part of the oven
+                                        for 3 to 4 hours, or until the meat is easily pierced.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done8'),document.getElementById('step8'))>
+                                    <div class="content" id="done8"> Done.</div>
+                                    <div class="content" id="step8"> In the last hour of cooking, bring 1 1/2
+                                        tablespoons butter
+                                        and 2 teaspoons oil to a medium heat in a sauté pan. Add the pearl onions and
+                                        toss around in the fat until they've browned, 10 minutes. Then stir in 1/2 cup
+                                        beef stock, a small pinch of salt and pepper and the herb bouquet. Reduce the
+                                        heat to low and simmer the onions for about 40 minutes, until the liquid has
+                                        evaporated, and the onions are tender.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/d7a932c4-b647-46b5-9d4c-deaa743277ef.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done9'),document.getElementById('step9'))>
+                                    <div class="content" id="done9"> Done.</div>
+                                    <div class="content" id="step9">Remove the onions and set aside. Discard the herb
+                                        bouquet and
+                                        wipe out the skillet. Add the remaining butter and oil and bring to a medium
+                                        heat.
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done10'),document.getElementById('step10'))>
+                                    <div class="content" id="done10"> Done.</div>
+                                    <div class="content" id="step10">Add the mushrooms and cook for about 5 minutes,
+                                        shaking the pan
+                                        to coat with the butter.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/6e19a8df-3f5c-4af7-b95a-f0f1c17c9f5c.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box"
+                                     onclick=hideThis(document.getElementById('done11'),document.getElementById('step11'))>
+                                    <div class="content" id="done11"> Done.</div>
+                                    <div class="content" id="step11"> Place a colander over a large pot. Drain the beef
+                                        stew through
+                                        the colander and into the pot. Place the pot with the sauce over a medium heat
+                                        and simmer for about 5 minutes, skimming any fat on top. Pour the beef and
+                                        vegetables back into the Dutch oven. Add the pearl onions and mushrooms to the
+                                        pot. Pour the sauce over the beef mix and simmer an additional 3 to 5 minutes.
+
+                                        <figure class="image">
+                                            <div class="imageToHide">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/12cf52e4-b64b-4821-8ede-e9f84676f8e9.jpg">
+                                            </div>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- right column -->
+    <div class="column  ">
+    <div class="box has-text-centered"> Weitere Rezeptideen!</div>
+        <div class="tile is-ancestor">
+            <div class="tile">
+                <div class="card box has-background-white-bis">
+                    <div class="card-image">
+                        <figure class="image">
+                            <a href="alina.html"><img src="hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
+                        </figure>
+                    </div>
+                    <div class="card-content  card-header-title">
+                        Hähnchenschenkel mit Kartoffeln und Gemüse
+                    </div>
+                </div>
+            </div>
+            <div class="tile ">
+                <div class="card box is-one-quarter-mobile has-background-white-bis">
+                    <div class="card-image">
+                        <figure class="image">
+                            <a href="alina.html"><img src="hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        TETSTASTASTAST
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
