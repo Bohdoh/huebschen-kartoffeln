@@ -92,7 +92,55 @@
             display: none;
         }
 
+        #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, {
+            display: block;
+        }
+
+
     </style>
+    <script>
+        function hideThis(done, description) {
+            if (done.style.display === "none") {
+                done.style.display = "block"
+                description.style.display = "none";
+            } else {
+                done.style.display = "none"
+                description.style.display = "block";
+            }
+        }
+
+        function hideImages() {
+            var x = document.getElementsByClassName('imageToHide');
+            Array.from(x).forEach((x) => {
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                    $(function () {
+                        $(".hidebutton").text(function () {
+                            return "Hide Images"
+                        })
+                    })
+                } else {
+                    x.style.display = "none";
+                    $(function () {
+                        $(".hidebutton").text(function () {
+                            return "Show Images"
+                        })
+                    })
+                }
+            })
+        }
+    </script>
+    <script>
+        $(function () {
+            $("#people").on("input", function () {
+                const people = +$(this).val();
+                const base = +$(this).data("ppl");
+                $(".quantity").text(function () {
+                    return people ? ($(this).data("qty") * (people / base)) : 0
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 <!--Navigation bar-->
@@ -282,31 +330,10 @@
                     <div class=" level">
                         <div class="title is-one-fifth level-left">Steps</div>
                         <div class="level-right">
-                            <button class="button  hidebutton" onclick="hideImages()">Hide
+                            <button class="button hidebutton" onclick="hideImages()">Hide
                                 Images
                             </button>
-                            <script>
-                                function hideImages() {
-                                    var x = document.getElementsByClassName('imageToHide');
-                                    Array.from(x).forEach((x) => {
-                                        if (x.style.display === "none") {
-                                            x.style.display = "block";
-                                            $(function () {
-                                                $(".hidebutton").text(function () {
-                                                    return "Hide Images"
-                                                })
-                                            })
-                                        } else {
-                                            x.style.display = "none";
-                                            $(function () {
-                                                $(".hidebutton").text(function () {
-                                                    return "Show Images"
-                                                })
-                                            })
-                                        }
-                                    })
-                                }
-                            </script>
+
                         </div>
                     </div>
                     <div class="content">
@@ -314,17 +341,7 @@
                             <li class="recipeStep">
                                 <div class="box"
                                      onclick=hideThis(document.getElementById('done1'),document.getElementById('step1'))>
-                                    <script>
-                                        function hideThis(done, description) {
-                                            if (done.style.display === "none") {
-                                                done.style.display = "block"
-                                                description.style.display = "none";
-                                            } else {
-                                                done.style.display = "none"
-                                                description.style.display = "block";
-                                            }
-                                        }
-                                    </script>
+
                                     <div class="content" id="done1"> Done.</div>
                                     <div class="content" id="step1"> Simmer bacon lardons in 4 cups water for 10 minutes
                                         (Lardon is
@@ -501,34 +518,42 @@
         </div>
     </div>
     <!-- right column -->
-    <div class="column  ">
-    <div class="box has-text-centered"> Weitere Rezeptideen!</div>
-        <div class="tile is-ancestor">
-            <div class="tile">
-                <div class="card box has-background-white-bis">
-                    <div class="card-image">
-                        <figure class="image">
-                            <a href="alina.html"><img src="hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
-                        </figure>
-                    </div>
-                    <div class="card-content  card-header-title">
-                        Hähnchenschenkel mit Kartoffeln und Gemüse
-                    </div>
+    <div class="column">
+        <div class="box has-text-centered"> Weitere Rezeptideen!</div>
+        <div class="columns  is-mobile is-multiline ml-2 mr-2">
+            <div class="column is-half">
+                <figure class="image">
+                    <a href="alina.html"><img src="hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
+                </figure>
+                <div class="box">
+                    Hähnchenschenkel mit Kartoffeln und Gemüse
                 </div>
             </div>
-            <div class="tile ">
-                <div class="card box is-one-quarter-mobile has-background-white-bis">
-                    <div class="card-image">
+            <div class="column is-half">
+                <div class="columns is-vcentered">
+                    <div class="column">
                         <figure class="image">
-                            <a href="alina.html"><img src="hähnchen.jpg" alt="Link zu Alinas Gericht"></a>
+                            <a href="minh.html"><img
+                                    src="https://assets.epicurious.com/photos/63c17f620a2588545b65efc9/3:2/w_4020,h_2680,c_limit/Atsuko-p-85_VOG_final.jpg"
+                                    alt="Link zu Minhs Gericht"></a>
                         </figure>
+                        <div class="box">
+                            Shoyu Ramen
+                        </div>
                     </div>
-                    <div class="card-content">
-                        TETSTASTASTAST
+                    <div class="column">
+                        <figure class="image">
+                            <a href="baco.html"><img src="images/St-Sebastian1.jpg" alt="Link zu Bacos Gericht"></a>
+                        </figure>
+                        <div class="box">
+                            St. Sebastian Cheesecake
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
 </body>
 </html>
