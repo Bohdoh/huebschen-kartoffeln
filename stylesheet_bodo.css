@@ -1,0 +1,73 @@
+body {
+    background-color: papayawhip;
+}
+
+.foreground {
+    backdrop-filter: blur(14px);
+}
+
+.description {
+    font-size: 18px;
+}
+
+.quantity {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.recipetitle {
+    font-family: Montserrat, sans-serif;
+}
+
+ul .quantity {
+    font-family: Montserrat, sans-serif;
+    width: 55px;
+    text-align: right;
+    color: #000;
+    letter-spacing: 1.5px;
+    float: left;
+}
+
+ul .description {
+    font-family: Montserrat, sans-serif;
+    color: #000;
+    padding-left: 10px;
+}
+
+ol li::marker {
+    font-size: 25px;
+}
+
+input {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
+
+}
+
+input[type='number'] {
+    width: 45px;
+}
+
+.beef {
+    background-image: url("https://food-images.files.bbci.co.uk/food/recipes/boeuf_bourguignon_25475_16x9.jpg");
+    background-size: cover;
+}
+
+
+.is-slightly-transparent {
+
+    background: rgba(244, 244, 255, 0.8);
+}
+
+#done1, #done2, #done3, #done4, #done5, #done6, #done7, #done8, #done9, #done10, #done11 {
+    display: none;
+}
+
+#step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1 {
+    display: block;
+}

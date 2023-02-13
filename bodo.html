@@ -8,83 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="stylesheet_bodo.css">
     <title>Beef Bourguignon </title>
-    <style>
-        body {
-            background-color: papayawhip;
-        }
-
-        .foreground {
-            backdrop-filter: blur(14px);
-        }
-
-        .description {
-            font-size: 18px;
-        }
-
-        .quantity {
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .recipetitle {
-            font-family: Montserrat, sans-serif;
-        }
-
-        ul .quantity {
-            font-family: Montserrat, sans-serif;
-            width: 55px;
-            text-align: right;
-            color: #000;
-            letter-spacing: 1.5px;
-            float: left;
-        }
-
-        ul .description {
-            font-family: Montserrat, sans-serif;
-            color: #000;
-            padding-left: 10px;
-        }
-
-        ol li::marker {
-            font-size: 25px;
-        }
-
-        input {
-            border: 0;
-            padding: 0;
-            margin: 0;
-            background: transparent;
-            font-size: 2rem;
-            font-weight: 600;
-            line-height: 1.125;
-
-        }
-
-        input[type='number'] {
-            width: 45px;
-        }
-
-        .beef {
-            background-image: url("https://food-images.files.bbci.co.uk/food/recipes/boeuf_bourguignon_25475_16x9.jpg");
-            background-size: cover;
-        }
-
-
-        .is-slightly-transparent {
-
-            background: rgba(244, 244, 255, 0.8);
-        }
-
-        #done1, #done2, #done3, #done4, #done5, #done6, #done7, #done8, #done9, #done10, #done11 {
-            display: none;
-        }
-
-        #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, #step1, {
-            display: block;
-        }
-
-
-    </style>
     <script src="https://kit.fontawesome.com/876162a540.js" crossorigin="anonymous"></script>
     <script>
         function hideThis(done, description) {
@@ -165,13 +88,14 @@
     <!-- spacer left -->
     <div class="column is-1"></div>
     <div class="column">
-        <section class="section">
+        <div class="section">
+
             <div class="columns box beef ">
                 <div class="column  is-slightly-transparent foreground">
                     <section class="section ">
-                        <h1 class="title">Beef Bourguignon</h1>
+                        <h2 class="title">Beef Bourguignon</h2>
                         <figure class="image is-hidden-tablet">
-                            <img src="https://images-gmi-pmc.edge-generalmills.com/42fb4d81-8d92-40e2-9f0a-524edce5ca74.jpg">
+                            <img src="https://images-gmi-pmc.edge-generalmills.com/42fb4d81-8d92-40e2-9f0a-524edce5ca74.jpg" alt="Shoyu Ramen Bild">
                         </figure>
                     </section>
                     <div class="content">There are some recipes that are worth the wait and Julia Child's Beef
@@ -198,7 +122,7 @@
                             <div>
                                 <p class="heading">Portions</p>
 
-                                <input size="3" type="number" value="4" data-ppl="4" id="people">
+                                <input type="number" value="4" data-ppl="4" id="people">
                             </div>
                         </div>
                     </div>
@@ -208,7 +132,7 @@
             </div>
 
 
-        </section>
+        </div>
     </div>
     <!-- spacer right -->
     <div class="column is-1"></div>
@@ -328,7 +252,7 @@
                         <ol class="recipeSteps">
                             <li class="recipeStep">
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done1'),document.getElementById('step1'))>
+                                     onclick="hideThis(document.getElementById('done1'), document.getElementById('step1'))">
 
                                     <div class="content" id="done1"> Done.</div>
                                     <div class="content" id="step1"> Simmer bacon lardons in 4 cups water for 10 minutes
@@ -338,7 +262,7 @@
 
                                         <figure class="image">
                                             <div class="imageToHide">
-                                                <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/2b1cf297-8625-4a9b-8583-775a07327ae9.jpg" alt="Bild von Zwischenschritt 1">
                                             </div>
                                         </figure>
                                     </div>
@@ -346,7 +270,7 @@
                             </li>
                             <li>
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done2'),document.getElementById('step2'))>
+                                     onclick="hideThis(document.getElementById('done2'), document.getElementById('step2'))">
                                     <div class="content" id="done2"> Done.</div>
                                     <div class="content" id="step2"> Preheat oven to 450°F. In a large Dutch oven, sauté
                                         the bacon
@@ -355,7 +279,7 @@
 
                                         <figure class="image">
                                             <div class="imageToHide">
-                                                <img src="https://images-gmi-pmc.edge-generalmills.com/8fbe42d2-d1bb-4f47-a796-8103f55456c0.jpg">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/8fbe42d2-d1bb-4f47-a796-8103f55456c0.jpg" alt="Bild von Zwischenschritt 2">
                                             </div>
                                         </figure>
                                     </div>
@@ -363,7 +287,7 @@
                             </li>
                             <li>
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done3'),document.getElementById('step3'))>
+                                     onclick="hideThis(document.getElementById('done3'), document.getElementById('step3'))">
                                     <div class="content" id="done3"> Done.</div>
                                     <div class="content" id="step3"> Dry the beef with a few paper towels for better
                                         browning. In
@@ -371,7 +295,7 @@
 
                                         <figure class="image">
                                             <div class="imageToHide">
-                                                <img src="https://images-gmi-pmc.edge-generalmills.com/d679899c-03f3-421c-bc7a-d92f82ad4948.jpg">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/d679899c-03f3-421c-bc7a-d92f82ad4948.jpg" alt="Bild von Zwischenschritt 3">
                                             </div>
                                         </figure>
                                     </div>
@@ -379,7 +303,7 @@
                             </li>
                             <li>
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done4'),document.getElementById('step4'))>
+                                     onclick="hideThis(document.getElementById('done4'), document.getElementById('step4'))">
                                     <div class="content" id="done4"> Done.</div>
                                     <div class="content" id="step4"> Back in the pot, add the sliced carrots and onions;
                                         sauté in
@@ -387,7 +311,7 @@
 
                                         <figure class="image">
                                             <div class="imageToHide">
-                                                <img src="https://images-gmi-pmc.edge-generalmills.com/6b859d0b-a00a-4a16-8403-83f01a3cf515.jpg">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/6b859d0b-a00a-4a16-8403-83f01a3cf515.jpg" alt="Bild von Zwischenschritt 4">
                                             </div>
                                         </figure>
                                     </div>
@@ -395,7 +319,7 @@
                             </li>
                             <li>
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done5'),document.getElementById('step5'))>
+                                     onclick="hideThis(document.getElementById('done5'), document.getElementById('step5'))">
                                     <div class="content" id="done5"> Done.</div>
                                     <div class="content" id="step5"> Add the bacon and beef back to the pot. Season with
                                         1/2
@@ -404,7 +328,7 @@
 
                                         <figure class="image">
                                             <div class="imageToHide">
-                                                <img src="https://images-gmi-pmc.edge-generalmills.com/2547d606-80e3-4944-9926-5b227723b765.jpg">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/2547d606-80e3-4944-9926-5b227723b765.jpg" alt="Bild von Zwischenschritt 5">
                                             </div>
                                         </figure>
                                     </div>
@@ -412,7 +336,7 @@
                             </li>
                             <li>
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done6'),document.getElementById('step6'))>
+                                     onclick="hideThis(document.getElementById('done6'), document.getElementById('step6'))">
                                     <div class="content" id="done6"> Done.</div>
                                     <div class="content" id="step6">Remove pot from oven; toss beef and place back in
                                         the oven for
@@ -423,7 +347,7 @@
                             </li>
                             <li>
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done7'),document.getElementById('step7'))>
+                                     onclick="hideThis(document.getElementById('done7'), document.getElementById('step7'))">
                                     <div class="content" id="done7"> Done.</div>
                                     <div class="content" id="step7">To the pot, add the wine and stock. The liquid
                                         should barely
@@ -435,7 +359,7 @@
                             </li>
                             <li>
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done8'),document.getElementById('step8'))>
+                                     onclick="hideThis(document.getElementById('done8'), document.getElementById('step8'))">
                                     <div class="content" id="done8"> Done.</div>
                                     <div class="content" id="step8"> In the last hour of cooking, bring 1 1/2
                                         tablespoons butter
@@ -447,7 +371,7 @@
 
                                         <figure class="image">
                                             <div class="imageToHide">
-                                                <img src="https://images-gmi-pmc.edge-generalmills.com/d7a932c4-b647-46b5-9d4c-deaa743277ef.jpg">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/d7a932c4-b647-46b5-9d4c-deaa743277ef.jpg" alt="Bild von Zwischenschritt 8">
                                             </div>
                                         </figure>
                                     </div>
@@ -455,7 +379,7 @@
                             </li>
                             <li>
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done9'),document.getElementById('step9'))>
+                                     onclick="hideThis(document.getElementById('done9'), document.getElementById('step9'))">
                                     <div class="content" id="done9"> Done.</div>
                                     <div class="content" id="step9">Remove the onions and set aside. Discard the herb
                                         bouquet and
@@ -466,7 +390,7 @@
                             </li>
                             <li>
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done10'),document.getElementById('step10'))>
+                                     onclick="hideThis(document.getElementById('done10'), document.getElementById('step10'))">
                                     <div class="content" id="done10"> Done.</div>
                                     <div class="content" id="step10">Add the mushrooms and cook for about 5 minutes,
                                         shaking the pan
@@ -474,7 +398,7 @@
 
                                         <figure class="image">
                                             <div class="imageToHide">
-                                                <img src="https://images-gmi-pmc.edge-generalmills.com/6e19a8df-3f5c-4af7-b95a-f0f1c17c9f5c.jpg">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/6e19a8df-3f5c-4af7-b95a-f0f1c17c9f5c.jpg" alt="Bild von Zwischenschritt 10">
                                             </div>
                                         </figure>
                                     </div>
@@ -482,7 +406,7 @@
                             </li>
                             <li>
                                 <div class="box"
-                                     onclick=hideThis(document.getElementById('done11'),document.getElementById('step11'))>
+                                     onclick="hideThis(document.getElementById('done11'), document.getElementById('step11'))">
                                     <div class="content" id="done11"> Done.</div>
                                     <div class="content" id="step11"> Place a colander over a large pot. Drain the beef
                                         stew through
@@ -493,7 +417,7 @@
 
                                         <figure class="image">
                                             <div class="imageToHide">
-                                                <img src="https://images-gmi-pmc.edge-generalmills.com/12cf52e4-b64b-4821-8ede-e9f84676f8e9.jpg">
+                                                <img src="https://images-gmi-pmc.edge-generalmills.com/12cf52e4-b64b-4821-8ede-e9f84676f8e9.jpg" alt="Bild von Zwischenschritt 11">
                                             </div>
                                         </figure>
                                     </div>
