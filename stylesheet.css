@@ -1,0 +1,8 @@
+body .navbar-menu {
+    background: url("images/wallpaperflare.com_wallpaper.jpg");
+    background-size: cover;
+}
+img {
+    width: 35px;
+    height: 35px;
+}
